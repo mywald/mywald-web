@@ -1,0 +1,18 @@
+# Whitelist: nur was die Webseite ausliefert. Alles andere bleibt draußen,
+# z. B. IntelliJ-Einstellungen (.idea/, *.iml) und Systemdateien.
+/*
+!/.gitignore
+!/README.md
+# Vorschau über GitLab Pages (pages.mywald.de)
+!/.gitlab-ci.yml
+!/CNAME
+!/index.html
+!/favicon.ico
+!/de/
+!/en/
+!/css/
+!/img/
+!/js/
+
+# Systemdateien
+.DS_Store

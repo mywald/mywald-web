@@ -1,0 +1,22 @@
+# Die Webseite im Heimnetz ansehen über GitLab Pages:
+#   https://pages.mywald.de/websites/mywald/  (Stand von main)
+# Die öffentliche Seite www.mywald.de soll später über den Mirror zu GitHub
+# Pages kommen. Dort stört diese Datei nicht: GitHub Pages (Jekyll) liefert
+# Dateien mit Punkt am Anfang nicht aus, und GitHub Actions liest sie nicht.
+pages:
+  image:
+    name: alpine/git:v2.52.0
+    entrypoint: [""]
+  tags: [pages]
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  variables:
+    GIT_DEPTH: "1"
+  script:
+    # Nur eingecheckte Dateien (git archive), also genau die Whitelist aus .gitignore
+    - mkdir public
+    - git archive HEAD | tar -x -C public
+    - rm public/.gitignore public/.gitlab-ci.yml public/README.md public/CNAME
+  artifacts:
+    paths:
+      - public
