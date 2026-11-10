@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <!-- Efeublatt wie in index.html (#efeu) -->
+    <path fill="#3f7d3a" d="M50 76 C57 84 71 88 83 80 C78 72 74 64 73 57 C81 53 88 47 93 38 C81 35 70 35 63 31
+          C61 21 55 13 50 5 C45 13 39 21 37 31 C30 35 19 35 7 38 C12 47 19 53 27 57 C26 64 22 72 17 80
+          C29 88 43 84 50 76 Z"/>
+    <path fill="none" stroke="#2c5a29" stroke-width="6" stroke-linecap="round" d="M50 76 L50 96"/>
+</svg>

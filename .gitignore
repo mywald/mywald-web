@@ -8,11 +8,11 @@
 !/CNAME
 !/index.html
 !/favicon.ico
-!/de/
-!/en/
+!/favicon.svg
 !/css/
 !/img/
-!/js/
+# Schrift Calligraffiti (nur „my wald“) samt Lizenz
+!/fonts/
 
 # Systemdateien
 .DS_Store
