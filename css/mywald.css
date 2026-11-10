@@ -243,3 +243,17 @@ button.link {
 }
 
 .dialog-close:hover { background: var(--rand); }
+
+/* Homelab: Linksammlung für zu Hause, mit Schloss statt Blatt – von außen nicht erreichbar */
+
+.links h2.privat { display: flex; align-items: center; gap: .4rem; }
+
+.schloss-klein { width: .95rem; height: .95rem; color: var(--muted); }
+
+.hinweis { text-transform: none; letter-spacing: 0; font-weight: 400; }
+
+.homelab a { background: transparent; box-shadow: none; border-style: dashed; }
+
+.links .schloss { color: var(--muted); transform: none; width: 1.25rem; height: 1.25rem; justify-self: center; }
+
+.links a:hover .schloss { color: var(--gruen); transform: none; }

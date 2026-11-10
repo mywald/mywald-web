@@ -25,6 +25,13 @@
               d="M50 76 L50 14 M50 76 L84 41 M50 76 L16 41 M50 76 L76 79 M50 76 L24 79"/>
         <path class="stiel" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" d="M50 76 L50 98"/>
     </symbol>
+    <!-- Schloss für die Homelab-Links (nur im Heimnetz erreichbar) -->
+    <symbol id="schloss" viewBox="0 0 24 24">
+        <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M7.5 10.5V7.5a4.5 4.5 0 0 1 9 0v3"/>
+        <rect x="4.5" y="10.5" width="15" height="11" rx="2.5" fill="currentColor"/>
+        <circle cx="12" cy="15.5" r="1.6" fill="var(--karte)"/>
+        <path stroke="var(--karte)" stroke-width="1.6" stroke-linecap="round" d="M12 16.5v2"/>
+    </symbol>
 </svg>
 
 <!-- Wortspiel: Maiwald → „my wald“. Oben deshalb ein Blätterdach aus Efeu (wiegt sich leicht, außer bei
@@ -111,6 +118,46 @@
                 <svg class="blatt" aria-hidden="true"><use href="#efeu"/></svg>
                 <span class="name">Blender Artists</span><span class="wo">Forum</span></a></li>
         </ul>
+
+        <h2>Zu Gast in Erlangen</h2>
+        <ul>
+            <li><a href="https://www.airbnb.de/rooms/5505376">
+                <svg class="blatt" aria-hidden="true"><use href="#efeu"/></svg>
+                <span class="name">Gästebungalow</span><span class="wo">bei uns im Hinterhaus · Airbnb</span></a></li>
+        </ul>
+
+        <!-- Linksammlung für zu Hause: die Dienste sind nur im Heimnetz (bzw. per VPN) erreichbar -->
+        <h2 class="privat"><svg class="schloss-klein" aria-hidden="true"><use href="#schloss"/></svg>
+            Homelab <span class="hinweis">– nur im Heimnetz</span></h2>
+        <ul class="homelab">
+            <li><a href="https://home.mywald.de/">
+                <svg class="blatt schloss" aria-hidden="true"><use href="#schloss"/></svg>
+                <span class="name">Home Assistant</span><span class="wo">home.mywald.de</span></a></li>
+            <li><a href="https://fotos.mywald.de/">
+                <svg class="blatt schloss" aria-hidden="true"><use href="#schloss"/></svg>
+                <span class="name">Fotos (Immich)</span><span class="wo">fotos.mywald.de</span></a></li>
+            <li><a href="https://paperless.mywald.de/">
+                <svg class="blatt schloss" aria-hidden="true"><use href="#schloss"/></svg>
+                <span class="name">Paperless</span><span class="wo">paperless.mywald.de</span></a></li>
+            <li><a href="https://vault.mywald.de/">
+                <svg class="blatt schloss" aria-hidden="true"><use href="#schloss"/></svg>
+                <span class="name">Vaultwarden</span><span class="wo">vault.mywald.de</span></a></li>
+            <li><a href="https://mail.mywald.de/">
+                <svg class="blatt schloss" aria-hidden="true"><use href="#schloss"/></svg>
+                <span class="name">Webmail</span><span class="wo">mail.mywald.de</span></a></li>
+            <li><a href="https://vertraege.mywald.de/">
+                <svg class="blatt schloss" aria-hidden="true"><use href="#schloss"/></svg>
+                <span class="name">Verträge (Wallos)</span><span class="wo">vertraege.mywald.de</span></a></li>
+            <li><a href="https://firstscreen.mywald.de/">
+                <svg class="blatt schloss" aria-hidden="true"><use href="#schloss"/></svg>
+                <span class="name">firstscreen</span><span class="wo">firstscreen.mywald.de</span></a></li>
+            <li><a href="https://gitlab.mywald.de/">
+                <svg class="blatt schloss" aria-hidden="true"><use href="#schloss"/></svg>
+                <span class="name">GitLab</span><span class="wo">gitlab.mywald.de</span></a></li>
+            <li><a href="https://nas.mywald.de/">
+                <svg class="blatt schloss" aria-hidden="true"><use href="#schloss"/></svg>
+                <span class="name">NAS (DSM)</span><span class="wo">nas.mywald.de</span></a></li>
+        </ul>
     </nav>
 </main>
 
@@ -140,7 +187,8 @@
         Sicherheitsgründen, siehe
         <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement">Datenschutzerklärung
             von GitHub</a>.</p>
-    <p>Die Links oben führen zu anderen Diensten; dort gelten deren Datenschutzbestimmungen.</p>
+    <p>Die Links oben führen zu anderen Diensten (z. B. Airbnb, Bluesky, Instagram); dort gelten deren
+        Datenschutzbestimmungen. Die Links unter „Homelab“ sind nur in meinem eigenen Netz erreichbar.</p>
     <p>Falls du Fragen zu dieser Erklärung hast oder eine Verletzung deiner Rechte vermutest, schreib mir bitte an
         <a href="mailto:philip@mywald.de">philip@mywald.de</a>, damit ich umgehend Abhilfe schaffen kann.</p>
 </div>
