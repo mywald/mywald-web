@@ -1,0 +1,245 @@
+/* mywald.de – Visitenkarte. Kein Framework, kein JavaScript.
+   Farben oben als Variablen, Dunkelmodus folgt der Einstellung des Systems. */
+
+@font-face {
+    font-family: "Calligraffiti";
+    /* nur die Buchstaben von „my wald“ (Teilmenge, siehe README) */
+    src: url("../fonts/calligraffiti.woff2") format("woff2");
+    font-display: swap;
+}
+
+:root {
+    color-scheme: light dark;
+    --bg: #f4f7f1;
+    --fg: #1d2b20;
+    --muted: #56685a;
+    --karte: #ffffff;
+    --rand: #dbe5d6;
+    --gruen: #2f6b2c;
+    --blatt-a: #3f7d3a;
+    --blatt-b: #5f9e46;
+    --blatt-c: #2c5a29;
+    --ader: rgb(255 255 255 / .35);
+    --ranke: #6b5a3e;
+    --schatten: 0 1px 2px rgb(29 43 32 / .08), 0 4px 16px rgb(29 43 32 / .06);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #0e1712;
+        --fg: #e4ede4;
+        --muted: #9db2a1;
+        --karte: #16231b;
+        --rand: #243629;
+        --gruen: #8cc26b;
+        --blatt-a: #5c9e46;
+        --blatt-b: #82b964;
+        --blatt-c: #3c7633;
+        --ader: rgb(255 255 255 / .28);
+        --ranke: #8a7655;
+        --schatten: 0 1px 2px rgb(0 0 0 / .3), 0 4px 16px rgb(0 0 0 / .25);
+    }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 1rem/1.6 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+a { color: var(--gruen); }
+
+:focus-visible { outline: 3px solid var(--gruen); outline-offset: 3px; border-radius: 4px; }
+
+/* Efeu (Symbol #efeu) */
+
+.ton-a { color: var(--blatt-a); }
+.ton-b { color: var(--blatt-b); }
+.ton-c { color: var(--blatt-c); }
+.ader { stroke: var(--ader); stroke-width: 1.4; }
+
+/* Kopf: Blätterdach und Schriftzug */
+
+.kopf { position: relative; text-align: center; }
+
+.blaetterdach {
+    display: block;
+    width: 100%;
+    height: clamp(96px, 14vw, 150px);
+    overflow: visible;
+}
+
+.ranke { fill: none; stroke: var(--ranke); stroke-width: 2.5; stroke-linecap: round; }
+
+.wiegen { animation: wiegen var(--dauer, 7s) ease-in-out var(--start, 0s) infinite alternate; }
+
+@keyframes wiegen {
+    from { transform: rotate(-6deg); }
+    to   { transform: rotate(6deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .wiegen { animation: none; }
+}
+
+.schriftzug {
+    margin: -.4rem 0 0;
+    font: clamp(3rem, 11vw, 4.5rem)/1 "Calligraffiti", "Brush Script MT", cursive;
+    letter-spacing: .02em;
+}
+
+.schriftzug .my { color: var(--gruen); }
+
+/* Karte */
+
+.karte {
+    width: min(34rem, 100% - 2rem);
+    margin: 1.5rem auto 0;
+    text-align: center;
+}
+
+.portrait {
+    position: relative;
+    width: 10.5rem;
+    margin: 0 auto 1.25rem;
+}
+
+.portrait img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    border: 4px solid var(--karte);
+    box-shadow: var(--schatten);
+}
+
+/* drei Blätter wie ein Anstecker unten rechts am Foto */
+.anstecker {
+    position: absolute;
+    right: -1.4rem;
+    bottom: -.9rem;
+    width: 4.6rem;
+    height: 4.6rem;
+    overflow: visible;
+}
+
+h1 { margin: 0; font-size: 1.75rem; font-weight: 650; letter-spacing: -.01em; }
+
+.rolle { margin: .15rem 0 0; color: var(--muted); }
+
+.intro { margin: 1.25rem auto 0; max-width: 28rem; }
+
+/* Links */
+
+.links { margin-top: 1.75rem; text-align: left; }
+
+.links h2 {
+    margin: 1.5rem 0 .5rem;
+    font-size: .8rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.links ul { margin: 0; padding: 0; list-style: none; display: grid; gap: .5rem; }
+
+.links a {
+    display: grid;
+    grid-template-columns: 1.6rem 1fr auto;
+    align-items: center;
+    gap: .75rem;
+    padding: .75rem 1rem;
+    background: var(--karte);
+    border: 1px solid var(--rand);
+    border-radius: .75rem;
+    box-shadow: var(--schatten);
+    color: var(--fg);
+    text-decoration: none;
+    transition: border-color .2s, transform .2s;
+}
+
+.links a:hover { border-color: var(--blatt-b); transform: translateY(-1px); }
+
+.blatt {
+    width: 1.6rem;
+    height: 1.6rem;
+    color: var(--blatt-a);
+    transform: rotate(-12deg);
+    transition: transform .3s, color .3s;
+}
+
+.links a:hover .blatt { color: var(--blatt-b); transform: rotate(14deg); }
+
+.name { font-weight: 600; }
+
+.wo { color: var(--muted); font-size: .9rem; text-align: right; overflow-wrap: anywhere; }
+
+@media (max-width: 26rem) {
+    .links a { grid-template-columns: 1.6rem 1fr; }
+    .wo { grid-column: 2; text-align: left; margin-top: -.6rem; }
+}
+
+/* Fuß */
+
+.fuss {
+    margin: 3rem 0 0;
+    padding: 1.25rem 1rem 2rem;
+    text-align: center;
+    color: var(--muted);
+    font-size: .9rem;
+}
+
+.fuss p { margin: 0; }
+
+button.link {
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--gruen);
+    font: inherit;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Kontakt und Datenschutz (popover) */
+
+.dialog {
+    width: min(40rem, 100% - 2rem);
+    max-height: calc(100% - 4rem);
+    overflow: auto;
+    padding: 1.5rem 1.75rem;
+    border: 1px solid var(--rand);
+    border-radius: 1rem;
+    background: var(--karte);
+    color: var(--fg);
+    box-shadow: 0 10px 40px rgb(0 0 0 / .25);
+}
+
+.dialog::backdrop { background: rgb(14 23 18 / .55); }
+
+.dialog h2 { margin: 1.25rem 0 .5rem; font-size: 1.25rem; }
+.dialog h2:first-of-type { margin-top: 0; padding-right: 2rem; }
+.dialog p { margin: 0 0 .75rem; }
+
+.dialog-close {
+    position: absolute;
+    top: .75rem;
+    right: .75rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    border: 0;
+    border-radius: 50%;
+    background: var(--bg);
+    color: var(--fg);
+    font-size: 1.4rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.dialog-close:hover { background: var(--rand); }

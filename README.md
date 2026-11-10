@@ -1,47 +1,42 @@
 # mywald.de
 
-Statische Webseite von [www.mywald.de](https://www.mywald.de): ein Onepager mit Foto und Links
-zu meinen Profilen (Social Media, Software, Making und Grafik), dazu eine Kontaktseite –
-jeweils auf Deutsch und Englisch. Kein Build: Dateien ändern, fertig.
+Statische Webseite von [www.mywald.de](https://www.mywald.de): eine kleine Visitenkarte mit Foto
+und Links zu meinen Profilen – kein Framework, kein JavaScript, kein Build. Änderungen direkt in
+`index.html`.
 
-- `index.html` – Startseite (Deutsch)
-- `en/index.html` – Startseite (Englisch)
-- `de/impressum.html`, `en/impressum.html` – Kontakt (E-Mail) und Haftungsausschluss
-- `css/boilerplate.css` – Reset und Grundstile aus [HTML5 Boilerplate](https://html5boilerplate.com/) (2012)
-- `css/base.css` – eigenes Layout
-- `css/fonts/` – Calligraffiti (Schriftzug „my wald“) und Roboto Thin (Text)
-- `img/` – Logo (Blätter) und Foto; `favicon.ico` im Hauptverzeichnis
-- `js/` – jQuery 1.7.1, Modernizr 2.5.3 und die leeren Vorlagen `plugins.js`/`script.js`
-  der Boilerplate
+Das Thema ist ein Wortspiel: Maiwald → „my wald“. Deshalb oben ein Blätterdach aus Efeu, das sich
+leicht wiegt (aus bei „Bewegung reduzieren“), Efeublätter als Anstecker am Foto und als Zeichen vor
+jedem Link. Hell oder dunkel je nach Systemeinstellung.
+
+- `index.html` – Inhalt; oben das Efeublatt als SVG-Symbol `#efeu`, das überall wiederverwendet
+  wird. „Kontakt und Datenschutz“ ist ein HTML-`popover`, das der Browser selbst öffnet und
+  schließt
+- `css/mywald.css` – Layout und Farben (oben die Farbvariablen, darunter der Dunkelmodus)
+- `fonts/calligraffiti.woff2` – Schriftzug „my wald“; nur eine Teilmenge (Buchstaben m, y, w, a,
+  l, d), erzeugt mit
+  `pyftsubset Calligraffiti-webfont.ttf --text="mywaldMYWALD" --flavor=woff2` aus der alten Seite
+  ([archive/mywald2020](https://gitlab.mywald.de/archive/mywald2020)). Für andere Buchstaben
+  neu erzeugen. Text in Systemschrift
+- `img/philip.jpg` – Foto (quadratischer Ausschnitt, 640 px); `img/apple-touch-icon.png`
+- `favicon.svg`, `favicon.ico` – das Efeublatt
 
 Eingecheckt ist nur, was die Seite ausliefert (`.gitignore` ist eine Whitelist) – so lässt sich
 das Repo direkt in IntelliJ öffnen, ohne `.idea/` oder `*.iml` einzuchecken.
 
-## Herkunft
-
-Übernommen aus [archive/mywald2020](https://gitlab.mywald.de/archive/mywald2020) (Stand
-`64c2c71`, Ordner `web/`), dort mit der ganzen Historie seit 2012 und allen Altlasten
-(App-Engine-Projekt, Thurek-Seite, Profilbild-Seiten, Bildmaterial). Hier ist nur, was die
-vier Seiten im Browser wirklich laden (per Netzwerkmitschnitt bei verschiedenen
-Fensterbreiten ermittelt), dazu die übrigen Formate der beiden Schriften. Alle Dateien sind
-byte-gleich mit dem, was www.mywald.de am 10.11.2026 auslieferte (S3/CloudFront).
-
-`css/base.css` stammt noch vom braunen Design von 2012 (siehe
-[archive/mywald2012](https://gitlab.mywald.de/archive/mywald2012)) und enthält Regeln für
-Bilder und Schriften, die heute nicht mehr verwendet werden und hier fehlen (Holz, Blatt,
-Bearpaw, Santana, vtks, Roboto Light). Der Browser lädt sie nicht, weil keine Seite diese
-Regeln nutzt.
+Die bisherige Seite (Onepager von 2017, zuletzt 2023 geändert) steht im ersten Commit nach
+„Initial commit“; die ganze Historie seit 2012 in archive/mywald2020, das braune Design von 2012 in
+[archive/mywald2012](https://gitlab.mywald.de/archive/mywald2012).
 
 ## Vorschau
 
 Im Heimnetz unter https://pages.mywald.de/websites/mywald/ (GitLab Pages, `.gitlab-ci.yml`),
 aktualisiert bei jedem Merge auf `main`. `CNAME` ist für GitHub Pages vorbereitet
-(`www.mywald.de`); heute kommt die Seite noch aus S3/CloudFront.
+(`www.mywald.de`); bis zur Umstellung kommt die Seite noch aus S3/CloudFront.
 
 ## Rechte
 
 Texte und Fotos: © Philip Maiwald, alle Rechte vorbehalten.
+Das Repository ist öffentlich, damit die Seite über GitHub Pages ausgeliefert werden kann;
+eine Lizenz zur Weiterverwendung ist damit nicht verbunden.
 
-Calligraffiti und Roboto stehen unter der Apache License 2.0
-(`css/fonts/Apache License Version 2.txt`). HTML5 Boilerplate, jQuery und Modernizr stehen
-unter der MIT-Lizenz.
+Die Schrift Calligraffiti steht unter der Apache License 2.0 (`fonts/LICENSE-Apache-2.0.txt`).

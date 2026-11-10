@@ -1,77 +1,149 @@
-<!doctype html>
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if lt IE 7]>
-<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]>
-<html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]>
-<html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js" lang="en"> <!--<![endif]-->
+<!DOCTYPE html>
+<html lang="de">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-    <title>mywald.de - Home</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="css/boilerplate.css">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="alternate" hreflang="en" href="en/index.html">
-
-    <script src="js/libs/modernizr-2.5.3.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Philip Maiwald – my wald</title>
+    <meta name="description" content="Philip Maiwald, Software-Entwickler aus Erlangen – hier geht es zu meinen Profilen
+          auf Bluesky, Instagram, YouTube, GitHub, Thingiverse und ArtStation.">
+    <meta name="theme-color" content="#f4f7f1" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0e1712" media="(prefers-color-scheme: dark)">
+    <link rel="icon" href="favicon.ico" sizes="32x32">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="stylesheet" href="css/mywald.css">
 </head>
 <body>
-<section id="content">
-    <header>
-        <div>my</div>
-        <div>wald</div>
-        <nav>
-        </nav>
-    </header>
 
-    <aside>
+<!-- Efeublatt wie im Favicon (favicon.svg); Farbe von der Umgebung (currentColor), Stiel unten bei (50, 98) -->
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute">
+    <symbol id="efeu" viewBox="0 0 100 100">
+        <path fill="currentColor" d="M50 76 C57 84 71 88 83 80 C78 72 74 64 73 57 C81 53 88 47 93 38 C81 35 70 35 63 31
+              C61 21 55 13 50 5 C45 13 39 21 37 31 C30 35 19 35 7 38 C12 47 19 53 27 57 C26 64 22 72 17 80
+              C29 88 43 84 50 76 Z"/>
+        <path class="ader" fill="none" stroke-linecap="round"
+              d="M50 76 L50 14 M50 76 L84 41 M50 76 L16 41 M50 76 L76 79 M50 76 L24 79"/>
+        <path class="stiel" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" d="M50 76 L50 98"/>
+    </symbol>
+</svg>
 
-    </aside>
+<!-- Wortspiel: Maiwald → „my wald“. Oben deshalb ein Blätterdach aus Efeu (wiegt sich leicht, außer bei
+     „Bewegung reduzieren“). -->
+<header class="kopf">
+    <svg class="blaetterdach" viewBox="0 0 1200 150" preserveAspectRatio="xMidYMin slice" aria-hidden="true">
+            <path class="ranke" d="M-20 37.7 L0.0 41.7 L20.0 44.4 L40.0 45.5 L60.0 45.4 L80.0 44.3 L100.0 42.9 L120.0 41.5 L140.0 40.8 L160.0 41.1 L180.0 42.4 L200.0 44.7 L220.0 47.5 L240.0 50.4 L260.0 52.7 L280.0 54.0 L300.0 53.7 L320.0 51.8 L340.0 48.3 L360.0 43.4 L380.0 37.8 L400.0 32.0 L420.0 26.8 L440.0 22.6 L460.0 19.8 L480.0 18.7 L500.0 18.9 L520.0 20.3 L540.0 22.2 L560.0 24.1 L580.0 25.5 L600.0 26.1 L620.0 25.5 L640.0 24.0 L660.0 21.9 L680.0 19.6 L700.0 17.7 L720.0 16.8 L740.0 17.3 L760.0 19.4 L780.0 23.0 L800.0 27.9 L820.0 33.6 L840.0 39.4 L860.0 44.7 L880.0 48.9 L900.0 51.6 L920.0 52.6 L940.0 52.1 L960.0 50.4 L980.0 47.9 L1000.0 45.4 L1020.0 43.2 L1040.0 41.9 L1060.0 41.6 L1080.0 42.3 L1100.0 43.8 L1120.0 45.6 L1140.0 47.0 L1160.0 47.7 L1180.0 47.1 L1200.0 45.0 L1220.0 41.4 L1240.0 36.6"/>
+            <g transform="translate(18 44) rotate(153)"><g class="wiegen" style="--dauer:5.2s;--start:-6.6s"><use href="#efeu" class="ton-c" x="-22" y="-42" width="43" height="43"/></g></g>
+            <g transform="translate(59 45) rotate(211)"><g class="wiegen" style="--dauer:5.1s;--start:-3.5s"><use href="#efeu" class="ton-a" x="-25" y="-49" width="50" height="50"/></g></g>
+            <g transform="translate(99 43) rotate(16)"><g class="wiegen" style="--dauer:8.8s;--start:-5.0s"><use href="#efeu" class="ton-a" x="-18" y="-36" width="37" height="37"/></g></g>
+            <g transform="translate(156 41) rotate(187)"><g class="wiegen" style="--dauer:8.9s;--start:-0.4s"><use href="#efeu" class="ton-a" x="-18" y="-35" width="36" height="36"/></g></g>
+            <g transform="translate(221 48) rotate(153)"><g class="wiegen" style="--dauer:7.3s;--start:-4.5s"><use href="#efeu" class="ton-a" x="-21" y="-41" width="42" height="42"/></g></g>
+            <g transform="translate(281 54) rotate(185)"><g class="wiegen" style="--dauer:6.5s;--start:-4.4s"><use href="#efeu" class="ton-a" x="-18" y="-36" width="37" height="37"/></g></g>
+            <g transform="translate(321 52) rotate(158)"><g class="wiegen" style="--dauer:7.1s;--start:-6.2s"><use href="#efeu" class="ton-c" x="-18" y="-35" width="36" height="36"/></g></g>
+            <g transform="translate(374 39) rotate(-13)"><g class="wiegen" style="--dauer:7.8s;--start:-2.0s"><use href="#efeu" class="ton-a" x="-30" y="-59" width="60" height="60"/></g></g>
+            <g transform="translate(430 24) rotate(209)"><g class="wiegen" style="--dauer:6.8s;--start:-4.9s"><use href="#efeu" class="ton-c" x="-24" y="-48" width="49" height="49"/></g></g>
+            <g transform="translate(471 19) rotate(155)"><g class="wiegen" style="--dauer:5.6s;--start:-3.9s"><use href="#efeu" class="ton-b" x="-24" y="-47" width="48" height="48"/></g></g>
+            <g transform="translate(510 20) rotate(200)"><g class="wiegen" style="--dauer:8.2s;--start:-6.5s"><use href="#efeu" class="ton-c" x="-26" y="-52" width="53" height="53"/></g></g>
+            <g transform="translate(559 24) rotate(180)"><g class="wiegen" style="--dauer:5.3s;--start:-0.7s"><use href="#efeu" class="ton-b" x="-22" y="-43" width="44" height="44"/></g></g>
+            <g transform="translate(606 26) rotate(12)"><g class="wiegen" style="--dauer:7.6s;--start:-7.9s"><use href="#efeu" class="ton-b" x="-27" y="-52" width="54" height="54"/></g></g>
+            <g transform="translate(670 21) rotate(171)"><g class="wiegen" style="--dauer:6.4s;--start:-7.5s"><use href="#efeu" class="ton-c" x="-21" y="-41" width="42" height="42"/></g></g>
+            <g transform="translate(719 17) rotate(180)"><g class="wiegen" style="--dauer:8.1s;--start:-1.0s"><use href="#efeu" class="ton-a" x="-26" y="-50" width="51" height="51"/></g></g>
+            <g transform="translate(765 20) rotate(208)"><g class="wiegen" style="--dauer:5.7s;--start:-3.2s"><use href="#efeu" class="ton-a" x="-22" y="-44" width="45" height="45"/></g></g>
+            <g transform="translate(812 31) rotate(175)"><g class="wiegen" style="--dauer:6.1s;--start:-3.3s"><use href="#efeu" class="ton-c" x="-19" y="-37" width="38" height="38"/></g></g>
+            <g transform="translate(862 45) rotate(-17)"><g class="wiegen" style="--dauer:5.6s;--start:-5.3s"><use href="#efeu" class="ton-a" x="-29" y="-58" width="59" height="59"/></g></g>
+            <g transform="translate(900 52) rotate(156)"><g class="wiegen" style="--dauer:5.0s;--start:-3.4s"><use href="#efeu" class="ton-b" x="-29" y="-56" width="57" height="57"/></g></g>
+            <g transform="translate(950 51) rotate(214)"><g class="wiegen" style="--dauer:8.4s;--start:-7.6s"><use href="#efeu" class="ton-c" x="-25" y="-49" width="50" height="50"/></g></g>
+            <g transform="translate(1009 44) rotate(177)"><g class="wiegen" style="--dauer:8.2s;--start:-3.1s"><use href="#efeu" class="ton-c" x="-27" y="-54" width="55" height="55"/></g></g>
+            <g transform="translate(1060 42) rotate(190)"><g class="wiegen" style="--dauer:5.8s;--start:-7.9s"><use href="#efeu" class="ton-a" x="-18" y="-36" width="37" height="37"/></g></g>
+            <g transform="translate(1112 45) rotate(-20)"><g class="wiegen" style="--dauer:5.6s;--start:-0.8s"><use href="#efeu" class="ton-c" x="-19" y="-36" width="37" height="37"/></g></g>
+            <g transform="translate(1161 48) rotate(208)"><g class="wiegen" style="--dauer:6.5s;--start:-5.1s"><use href="#efeu" class="ton-c" x="-17" y="-34" width="35" height="35"/></g></g>
+    </svg>
+    <p class="schriftzug" aria-label="my wald"><span class="my">my</span> wald</p>
+</header>
 
-    <section role="main">
-        <article class="cols">
-            <h1>Hallo,</h1>
+<main class="karte">
+    <div class="portrait">
+        <img src="img/philip.jpg" width="640" height="640" alt="Philip Maiwald">
+        <svg class="anstecker" viewBox="0 0 100 100" aria-hidden="true">
+            <g transform="translate(46 70) rotate(-38)"><use href="#efeu" class="ton-a" x="-26" y="-51" width="52" height="52"/></g>
+            <g transform="translate(50 72) rotate(22)"><use href="#efeu" class="ton-b" x="-21" y="-41" width="42" height="42"/></g>
+            <g transform="translate(48 72) rotate(78)"><use href="#efeu" class="ton-c" x="-15" y="-29" width="30" height="30"/></g>
+        </svg>
+    </div>
 
-            <p>ich bin Philip Maiwald.</p>
+    <h1>Philip Maiwald</h1>
+    <p class="rolle">Software-Entwickler in Erlangen</p>
+    <p class="intro">Abseits des Schreibtischs drucke ich in 3D, modelliere in Blender und bastele an meinem
+        kleinen Heimnetz. Hier findest du mich im Netz:</p>
 
-            <img src="img/phips.jpg" style="width:200px"/>
-            <p>Ich lebe in <a href="https://www.google.de/maps/place/Erlangen/@49.5891559,10.9142722" target="_new">Erlangen</a> und arbeite dort als Software-Entwickler bei der <a href="http://www.la2.de" target="_new">LA2 GmbH</a>.</p>
+    <nav class="links" aria-label="Profile">
+        <h2>Soziale Netzwerke</h2>
+        <ul>
+            <li><a href="https://bsky.app/profile/mywald.bsky.social" rel="me">
+                <svg class="blatt" aria-hidden="true"><use href="#efeu"/></svg>
+                <span class="name">Bluesky</span><span class="wo">@mywald.bsky.social</span></a></li>
+            <li><a href="https://www.instagram.com/pmywald/" rel="me">
+                <svg class="blatt" aria-hidden="true"><use href="#efeu"/></svg>
+                <span class="name">Instagram</span><span class="wo">@pmywald</span></a></li>
+            <li><a href="https://www.youtube.com/channel/UCD4vo0VZ3nYKXbPnwBjCF8A" rel="me">
+                <svg class="blatt" aria-hidden="true"><use href="#efeu"/></svg>
+                <span class="name">YouTube</span><span class="wo">Videos</span></a></li>
+        </ul>
 
-            <h2>Du findest mich auf diesen Sozialen Netzwerken:</h2>
-            <ul>
-                <li><a href="https://twitter.com/philipmaiwald" target="_new">Twitter</a></li>
-                <li><a href="https://www.instagram.com/pmywald/" target="_new">Instagram</a></li>
-                <li><a href="https://www.youtube.com/channel/UCD4vo0VZ3nYKXbPnwBjCF8A" target="_new">YouTube</a></li>
-            </ul>
+        <h2>Software</h2>
+        <ul>
+            <li><a href="https://github.com/mywald" rel="me">
+                <svg class="blatt" aria-hidden="true"><use href="#efeu"/></svg>
+                <span class="name">GitHub</span><span class="wo">mywald</span></a></li>
+        </ul>
 
-            <h2>Software:</h2>
-            <ul>
-                <li><a href="https://github.com/mywald" target="_new">Git Hub</a></li>
-            </ul>
+        <h2>Making und Grafik</h2>
+        <ul>
+            <li><a href="https://www.thingiverse.com/mywald/designs" rel="me">
+                <svg class="blatt" aria-hidden="true"><use href="#efeu"/></svg>
+                <span class="name">Thingiverse</span><span class="wo">3D-Druck-Modelle</span></a></li>
+            <li><a href="https://wikifactory.com/@mywald/" rel="me">
+                <svg class="blatt" aria-hidden="true"><use href="#efeu"/></svg>
+                <span class="name">Wikifactory</span><span class="wo">Projekte</span></a></li>
+            <li><a href="https://www.artstation.com/artist/mywald" rel="me">
+                <svg class="blatt" aria-hidden="true"><use href="#efeu"/></svg>
+                <span class="name">ArtStation</span><span class="wo">Grafik und 3D</span></a></li>
+            <li><a href="https://blenderartists.org/u/mywald/summary" rel="me">
+                <svg class="blatt" aria-hidden="true"><use href="#efeu"/></svg>
+                <span class="name">Blender Artists</span><span class="wo">Forum</span></a></li>
+        </ul>
+    </nav>
+</main>
 
-            <h2>Making und Grafik:</h2>
-            <ul>
-                <li><a href="https://wikifactory.com/@mywald/" target="_new">Wikifactory</a></li>
-                <li><a href="https://www.thingiverse.com/mywald/designs" target="_new">Thingiverse</a></li>
-                <li><a href="https://blenderartists.org/u/mywald/summary" target="_new">blenderartists.org</a></li>
-                <li><a href="https://www.artstation.com/artist/mywald" target="_new">Art Station</a></li>
-            </ul>
+<footer class="fuss">
+    <p>© Philip Maiwald ·
+        <button class="link" type="button" popovertarget="kontakt">Kontakt und Datenschutz</button></p>
+</footer>
 
-        </article>
-    </section>
-    <footer>
-        Copyright (c) 2020 mywald.de - <a href="de/impressum.html">Kontakt</a>
-    </footer>
+<!-- Ohne JavaScript: popover öffnet und schließt der Browser selbst (auch per Esc oder Klick daneben) -->
+<div class="dialog" id="kontakt" popover role="dialog" aria-labelledby="kontakt-titel">
+    <button class="dialog-close" type="button" popovertarget="kontakt" popovertargetaction="hide"
+            aria-label="Schließen">×</button>
+    <h2 id="kontakt-titel">Kontakt</h2>
+    <p>Das ist meine private Seite – ohne Werbung und ohne geschäftlichen Zweck. Du erreichst mich per E-Mail an
+        <a href="mailto:philip@mywald.de">philip@mywald.de</a>.</p>
 
-    <script src="js/libs/jquery-1.7.1.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/script.js"></script>
-</section>
+    <h2>Datenschutzerklärung</h2>
+    <p>Diese Webseite ist ohne Registrierung zugänglich. Ich verwende keine Cookies und keine Analyse-Software;
+        Schrift und Bilder liegen auf dieser Seite selbst, es werden keine Inhalte von anderen Servern nachgeladen.
+        Daher werden nur folgende Daten von dir an meinen Provider übermittelt: deine IP-Adresse, der verwendete
+        Browser (Version, Betriebssystem), die eingestellte bevorzugte Sprache, die Uhrzeit des Besuchs und von welcher
+        Seite du über einen Link zu dieser Seite gefolgt bist. Diese Daten werden aus technischen Gründen an alle
+        Webseiten gesendet, die du besuchst. Um daraus Rückschlüsse auf deine Identität zu ziehen, sind weitere
+        Informationen von deinem Internetprovider nötig, auf die ich keinen Zugriff habe. Ggf. werden Teile dieser
+        Daten für einige Zeit in Logdateien protokolliert.</p>
+    <p>Mein Provider ist GitHub Pages (GitHub Inc., USA); er erhält diese Daten und speichert die IP-Adresse aus
+        Sicherheitsgründen, siehe
+        <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement">Datenschutzerklärung
+            von GitHub</a>.</p>
+    <p>Die Links oben führen zu anderen Diensten; dort gelten deren Datenschutzbestimmungen.</p>
+    <p>Falls du Fragen zu dieser Erklärung hast oder eine Verletzung deiner Rechte vermutest, schreib mir bitte an
+        <a href="mailto:philip@mywald.de">philip@mywald.de</a>, damit ich umgehend Abhilfe schaffen kann.</p>
+</div>
+
 </body>
 </html>
