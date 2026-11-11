@@ -1,5 +1,5 @@
 /* mywald.de – Visitenkarte. Kein Framework, kein JavaScript.
-   Farben oben als Variablen, Dunkelmodus folgt der Einstellung des Systems. */
+   Farben oben als Variablen, hell/dunkel nach System oder Umschalter in der Fußzeile. */
 
 @font-face {
     font-family: "Calligraffiti";
@@ -9,36 +9,22 @@
 }
 
 :root {
+    /* hell oder dunkel nach color-scheme: folgt dem System, außer der Umschalter unten
+       in der Fußzeile kehrt es um; light-dark(hell, dunkel) wählt dann die Farbe */
     color-scheme: light dark;
-    --bg: #f4f7f1;
-    --fg: #1d2b20;
-    --muted: #56685a;
-    --karte: #ffffff;
-    --rand: #dbe5d6;
-    --gruen: #2f6b2c;
-    --blatt-a: #3f7d3a;
-    --blatt-b: #5f9e46;
-    --blatt-c: #2c5a29;
-    --ader: rgb(255 255 255 / .35);
-    --ranke: #6b5a3e;
-    --schatten: 0 1px 2px rgb(29 43 32 / .08), 0 4px 16px rgb(29 43 32 / .06);
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --bg: #0e1712;
-        --fg: #e4ede4;
-        --muted: #9db2a1;
-        --karte: #16231b;
-        --rand: #243629;
-        --gruen: #8cc26b;
-        --blatt-a: #5c9e46;
-        --blatt-b: #82b964;
-        --blatt-c: #3c7633;
-        --ader: rgb(255 255 255 / .28);
-        --ranke: #8a7655;
-        --schatten: 0 1px 2px rgb(0 0 0 / .3), 0 4px 16px rgb(0 0 0 / .25);
-    }
+    --bg: light-dark(#f4f7f1, #0e1712);
+    --fg: light-dark(#1d2b20, #e4ede4);
+    --muted: light-dark(#56685a, #9db2a1);
+    --karte: light-dark(#ffffff, #16231b);
+    --rand: light-dark(#dbe5d6, #243629);
+    --gruen: light-dark(#2f6b2c, #8cc26b);
+    --blatt-a: light-dark(#3f7d3a, #5c9e46);
+    --blatt-b: light-dark(#5f9e46, #82b964);
+    --blatt-c: light-dark(#2c5a29, #3c7633);
+    --ader: light-dark(rgb(255 255 255 / .35), rgb(255 255 255 / .28));
+    --ranke: light-dark(#6b5a3e, #8a7655);
+    --schatten: 0 1px 2px light-dark(rgb(29 43 32 / .08), rgb(0 0 0 / .3)),
+                0 4px 16px light-dark(rgb(29 43 32 / .06), rgb(0 0 0 / .25));
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -197,7 +183,7 @@ h1 { margin: 0; font-size: 1.75rem; font-weight: 650; letter-spacing: -.01em; }
 
 .fuss p { margin: 0; }
 
-button.link {
+button.link, .modus {
     padding: 0;
     border: 0;
     background: none;
@@ -205,6 +191,26 @@ button.link {
     font: inherit;
     text-decoration: underline;
     cursor: pointer;
+}
+
+/* Umschalter hell/dunkel: ohne JavaScript eine Checkbox, die die Systemeinstellung umkehrt
+   (:has). Sie zeigt, wohin sie schaltet. Gemerkt wird die Wahl nicht, beim nächsten Besuch
+   gilt wieder das System. */
+
+.modus input { position: absolute; opacity: 0; width: 1px; height: 1px; margin: 0; }
+.modus:has(:focus-visible) { outline: 3px solid var(--gruen); outline-offset: 3px; border-radius: 4px; }
+.modus .zu-hell { display: none; }
+
+@media (prefers-color-scheme: light) {
+    :root:has(#modus:checked) { color-scheme: dark; }
+    .modus:has(:checked) .zu-dunkel { display: none; }
+    .modus:has(:checked) .zu-hell { display: inline; }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:has(#modus:checked) { color-scheme: light; }
+    .modus:not(:has(:checked)) .zu-dunkel { display: none; }
+    .modus:not(:has(:checked)) .zu-hell { display: inline; }
 }
 
 /* Kontakt und Datenschutz (popover) */
