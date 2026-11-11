@@ -6,12 +6,13 @@ und Links zu meinen Profilen – kein Framework, kein JavaScript, kein Build. Ä
 
 Das Thema ist ein Wortspiel: Maiwald → „my wald“. Deshalb oben ein Blätterdach aus Efeu, das sich
 leicht wiegt (aus bei „Bewegung reduzieren“), Efeublätter als Anstecker am Foto und als Zeichen vor
-jedem Link. Hell oder dunkel je nach Systemeinstellung.
+jedem Link. Hell oder dunkel je nach Systemeinstellung; unten in der Fußzeile lässt es sich
+umschalten (ohne JavaScript: eine Checkbox und `:has()`, die Wahl gilt nur bis zum Neuladen).
 
 - `index.html` – Inhalt; oben das Efeublatt als SVG-Symbol `#efeu`, das überall wiederverwendet
   wird. „Kontakt und Datenschutz“ ist ein HTML-`popover`, das der Browser selbst öffnet und
   schließt
-- `css/mywald.css` – Layout und Farben (oben die Farbvariablen, darunter der Dunkelmodus)
+- `css/mywald.css` – Layout und Farben (oben die Farbvariablen, je mit `light-dark(hell, dunkel)`)
 - `fonts/calligraffiti.woff2` – Schriftzug „my wald“; nur eine Teilmenge (Buchstaben m, y, w, a,
   l, d), erzeugt mit
   `pyftsubset Calligraffiti-webfont.ttf --text="mywaldMYWALD" --flavor=woff2` aus der alten Seite
